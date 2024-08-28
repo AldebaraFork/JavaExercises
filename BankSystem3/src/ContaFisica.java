@@ -19,8 +19,8 @@ public class ContaFisica extends Conta implements ValidaSenha {
     @Override
     public void setSenha(String senha) {
         try {
-            System.out.println("Insira a senha: ");
-            senha = ler.nextLine();
+            System.out.println("Insira a senha com no mínimo 8 caracteres: ");
+            senha = ler.next();
             if (senha.length() < 8) {
                 System.out.println("Senha invalida! Tente novamente");
                 setSenha("");
@@ -41,11 +41,11 @@ public class ContaFisica extends Conta implements ValidaSenha {
     public void validaSenha(String senha) {
       try {
           System.out.println("Insira a senha:");
-          senha = ler.nextLine();
+          senha = ler.next();
           if(senha.equals(this.senha)) {
               System.out.println("Senha validada com sucesso! ");
           }else {
-              System.out.println("Senha invalida! Tente novamente");
+              System.out.println("Senha incorreta Tente novamente");
               validaSenha("");
           }
       }catch (Exception e) {

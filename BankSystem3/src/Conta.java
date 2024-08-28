@@ -47,7 +47,7 @@ public abstract class Conta {
     public void setEmail(String email) {
         try {
             System.out.println("Insira o email: ");
-            email = ler.nextLine();
+            email = ler.next();
             if (email.contains("@") && email.contains(".")) {
                 System.out.println("Email validado com sucesso! ");
                 this.email = email;
@@ -63,7 +63,7 @@ public abstract class Conta {
 
     public void setIdade(int idade) {
         try{
-            System.out.println("Insira o numero da idade: ");
+            System.out.println("Insira a idade: ");
             idade = ler.nextInt();
             if (idade < 18) {
                 System.out.println("Idade invalida! Tente novamente");

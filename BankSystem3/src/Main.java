@@ -1,5 +1,11 @@
 public class Main {
     public static void main(String[] args) {
-       Conta conta = new ContaFisica();
+
+
+        ContaFisica conta = new ContaFisica();
+        conta.setSenha("");
+        conta.validaSenha("");
+
+
     }
 }
