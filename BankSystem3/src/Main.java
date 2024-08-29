@@ -3,8 +3,6 @@ public class Main {
 
 
         ContaFisica conta = new ContaFisica();
-        conta.setSenha("");
-        conta.validaSenha("");
 
 
     }

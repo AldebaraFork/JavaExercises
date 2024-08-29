@@ -11,6 +11,7 @@ public class ContaFisica extends Conta implements ValidaSenha {
     private String senha;
     private String cpf;
 
+    //IMPLEMENTAÇÕES DA INTERFACE
     @Override
     public String getSenha() {
         return senha;
@@ -37,11 +38,12 @@ public class ContaFisica extends Conta implements ValidaSenha {
 
     }
 
+    //VALIDA CASO A SENHA SEJA IGUAL A USADA NO setSenha
     @Override
     public void validaSenha(String senha) {
       try {
           System.out.println("Insira a senha:");
-          senha = ler.next();
+          senha = ler.next ();
           if(senha.equals(this.senha)) {
               System.out.println("Senha validada com sucesso! ");
           }else {
@@ -52,5 +54,49 @@ public class ContaFisica extends Conta implements ValidaSenha {
           System.out.println("Ocorreu o erro: " +  e.getMessage());
           System.out.println("Causa: " + e.getCause() + ", Tente novamente");
       }
+    }
+
+
+    //METODOS DO CPF
+    public String getCpf(){
+        return this.cpf;
+    }
+
+    public void setCpf(String cpf){
+        try {
+            System.out.println("Insira o cpf: ");
+            cpf = ler.next();
+            if (cpf.length() != 11) {
+                System.out.println("Cpf cadastrado com sucesso! ");
+                this.cpf = cpf;
+            } else {
+                System.out.println("CPF invalido! Tente novamente");
+            }
+        }catch (Exception e) {
+            System.out.println("Ocorreu o erro " + e.getMessage() + ", Tente novamente");
+            setCpf("");
+        }
+    }
+
+    //ESSE METODO É TOTALMENTE OPCIONAL
+    public void validaCpf(String cpf){
+        try {
+            System.out.println("Insira o cpf: ");
+            cpf = ler.next();
+            if (cpf.length() != 11) {
+                System.out.println("Insira um cpf valido! ");
+                validaCpf("");
+            }else if (cpf.equals(this.cpf)) {
+                System.out.println("CPF validado com sucesso! ");
+
+            }else {
+                System.out.println("Tente novamente");
+                setCpf("");
+            }
+        }catch (Exception e) {
+            System.out.println("Ocorreu o erro " + e.getMessage() + ", Tente novamente");
+            setCpf("");
+        }
+
     }
 }
