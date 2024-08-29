@@ -2,8 +2,8 @@ public class Main {
     public static void main(String[] args) {
 
 
-        ContaFisica conta = new ContaFisica();
-
+        MenuPrincipal menu = new MenuPrincipal();
+        menu.MenuPrincipal();
 
     }
 }
