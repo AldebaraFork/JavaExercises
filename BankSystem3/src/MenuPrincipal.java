@@ -23,6 +23,9 @@ public class MenuPrincipal {
                     MenuPrincipal();
                     break;
                 case 2:
+                    ContaJuridica contaJuridica = new ContaJuridica();
+                    System.out.println("Conta criada com sucesso! ");
+                    MenuPrincipal();
                     break;
                 case 3:
                     break;

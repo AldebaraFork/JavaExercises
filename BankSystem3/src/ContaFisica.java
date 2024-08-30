@@ -2,7 +2,7 @@ public class ContaFisica extends Conta implements ValidaSenha {
 
     //CONSTRUTOR DE CONTAS FISICAS, TODA CONTA FISICA DEVE POSSUIR NOME,EMAIL E IDADE
     public ContaFisica() {
-        criaContaFisica();
+        CriaContaFisica();
     }
 
     //PROPRIEDADES DA CONTA FISICA
@@ -97,7 +97,7 @@ public class ContaFisica extends Conta implements ValidaSenha {
 
 
    //ESSE METODO UTILIZA TODOS OS OUTROS PARA OBTER TODOS OS DADOS DE UMA CONTA FISICA
-    public void criaContaFisica(){
+    public void CriaContaFisica(){
         try {
             setNome("");
             setEmail("");
@@ -118,6 +118,7 @@ public class ContaFisica extends Conta implements ValidaSenha {
             System.out.println("================================");
         }catch (Exception e) {
             System.out.println("Ocorreu o erro " + e.getMessage());
+            CriaContaFisica();
         }
 
     }
