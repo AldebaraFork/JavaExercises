@@ -4,11 +4,12 @@ public class Main {
 
         try(FluxoConexao fluxo = new FluxoConexao()){
             fluxo.IniciarConexao();
-        }catch (Exception e){
-            System.out.println("Catch inciado! ");
+        }catch (MinhaException e){
+            System.out.println("Catch iniciado! ");
             //MOSTRA AONDE OCORREU O ERRO
             e.printStackTrace();
         }
+
 
     }
 }
