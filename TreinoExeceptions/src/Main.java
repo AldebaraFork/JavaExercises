@@ -4,6 +4,7 @@ public class Main {
 
         try(FluxoConexao fluxo = new FluxoConexao()){
             fluxo.IniciarConexao();
+
         }catch (MinhaException e){
             System.out.println("Catch iniciado! ");
             //MOSTRA AONDE OCORREU O ERRO
