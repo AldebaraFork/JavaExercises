@@ -1,15 +1,13 @@
 import java.util.ArrayList;
 
-public class Jojo<T> {
+public class Jojo {
 
-    public ArrayList<T> jojos = new ArrayList<T>();
+    public ArrayList<Object> jojos = new ArrayList<>();
 
-   public Jojo(T stande, T joestaar){
-       Object stand = new Stand();
-       Object joestar = new Joestar();
+   public Jojo(Stand stande, Joestar joestaar){
        adicionarListar(stande, joestaar);
    }
-   public void adicionarListar(T stand, T joestar){
+   public void adicionarListar(Object stand, Object joestar){
        jojos.add(stand);
        jojos.add(joestar);
 

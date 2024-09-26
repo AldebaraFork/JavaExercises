@@ -2,9 +2,14 @@ public class Main {
     public static void main(String[] args) {
 
 
-        Jojo jojo = new Jojo("Star platinum", "Jotaro");
+        Joestar joestar = new Joestar();
+        Stand stand = new Stand();
+        Jojo jojo = new Jojo(stand, joestar);
 
-        System.out.println(jojo.jojos.toString());
+
+        System.out.println(stand.toString());
+        System.out.println(joestar.toString());
+
 
     }
 }

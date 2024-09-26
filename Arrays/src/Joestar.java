@@ -2,6 +2,15 @@ public class Joestar {
 
     private String nomesJoestar;
 
+    public Joestar(){
+        setNomesJoestar("");
+    }
+
+    public void setNomesJoestar(String nomesJoestar) {
+        nomesJoestar = "Jotaro Kujo";
+        this.nomesJoestar = nomesJoestar;
+    }
+
     public String getNomesJoestar(){
         return this.nomesJoestar;
     }
