@@ -1,13 +1,10 @@
 public class Main {
     public static void main(String[] args) {
 
-        Clientes cliente = new Clientes();
 
-        cliente.setNome("");
-        cliente.setCpf("");
-        cliente.setIdade(0);
+        Jojo jojo = new Jojo("Star platinum", "Jotaro");
 
-        cliente.salvarCliente();
-        cliente.visualizarCliente();
+        System.out.println(jojo.jojos.toString());
+
     }
 }
