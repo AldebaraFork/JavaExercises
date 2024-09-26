@@ -1,6 +1,6 @@
 public class Joestar {
 
-    public String nomesJoestar;
+    private String nomesJoestar;
 
     public String getNomesJoestar(){
         return this.nomesJoestar;

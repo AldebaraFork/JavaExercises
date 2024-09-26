@@ -1,6 +1,6 @@
 public class Stand {
 
-    public String star;
+    private String star;
 
     public String getStar(){
         return this.star;
@@ -8,6 +8,6 @@ public class Stand {
 
     @Override
     public String toString(){
-        return "Nome do stand: " + this.star;
+        return "Nome do stand: " + this.getStar();
     }
 }
