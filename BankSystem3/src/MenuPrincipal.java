@@ -28,6 +28,7 @@ public class MenuPrincipal {
                     MenuPrincipal();
                     break;
                 case 3:
+                    CarteiraInvestimentos investe = new CarteiraInvestimentos();
                     break;
                 case 4:
                     break;

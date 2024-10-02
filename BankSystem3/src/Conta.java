@@ -10,7 +10,7 @@ public abstract class Conta {
     private int agencia;
     private String email;
     private int idade;
-    private double saldo;
+
 
     //METODOS SET
     public void setNome(String nome) {
