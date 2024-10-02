@@ -10,6 +10,28 @@ public class CarteiraInvestimentos extends Conta implements ValidaSenha{
     //CONSTRUTOR DA CARTEIRA
     public CarteiraInvestimentos(){
 
+        //Toda carteira de investimento é necessario informar um ID e um saldo
+        setId("");
+        setSenha("");
+
+        //Valida caso o usuario deseja realizar um deposito
+        System.out.println("Deseja realizar um deposito? S/N");
+        String resposta = ler.next();
+        if (resposta.equalsIgnoreCase("s") || resposta.equalsIgnoreCase("sim")){
+            deposito(0);
+            setSaldo(0);
+        }else if (resposta.equalsIgnoreCase("n") || resposta.equalsIgnoreCase("nao")){
+            System.out.println("Deposito não realizado! ");
+        }else {
+            System.out.println("Insira uma opção valida! Não foi possivel criar uma carteira de investimento!");
+        }
+        //valida os dados ao usuario dentro do construtor
+        validaId("");
+        validaSenha("");
+
+
+        //mostra os dados ao usuario
+
     }
 
 
@@ -44,7 +66,7 @@ public class CarteiraInvestimentos extends Conta implements ValidaSenha{
     public void deposito(double valor){
         System.out.println("Insira o valor do deposito: (minimo de 20 reais)");
         valor = ler.nextDouble();
-        if (valor <= 20){
+        if (valor < 20){
             System.out.println("É necessario que o valor mínimo de depósito seja R$20!");
             deposito(0);
         }else {
