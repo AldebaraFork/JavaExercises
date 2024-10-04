@@ -16,21 +16,22 @@ public class CarteiraInvestimentos extends Conta implements ValidaSenha{
 
         //Valida caso o usuario deseja realizar um deposito
         System.out.println("Deseja realizar um deposito? S/N");
+
         String resposta = ler.next();
-        if (resposta.equalsIgnoreCase("s") || resposta.equalsIgnoreCase("sim")){
-            deposito(0);
-            setSaldo(0);
-        }else if (resposta.equalsIgnoreCase("n") || resposta.equalsIgnoreCase("nao")){
-            System.out.println("Deposito não realizado! ");
-        }else {
-            System.out.println("Insira uma opção valida! Não foi possivel criar uma carteira de investimento!");
-        }
-        //valida os dados ao usuario dentro do construtor
-        validaId("");
-        validaSenha("");
+            if (resposta.equalsIgnoreCase("s") || resposta.equalsIgnoreCase("sim")) {
+                deposito(0);
+
+            } else if (resposta.equalsIgnoreCase("n") || resposta.equalsIgnoreCase("nao")) {
+                System.out.println("Deposito não realizado! ");
+                //valida os dados ao usuario dentro do construtor
+                validaId("");
+                validaSenha("");
+            } else {
+                System.out.println("Insira uma opção valida! Não foi possivel criar uma carteira de investimento!");
+            }
 
 
-        //mostra os dados ao usuario
+
 
     }
 
