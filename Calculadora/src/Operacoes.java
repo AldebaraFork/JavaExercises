@@ -18,37 +18,42 @@ public abstract class Operacoes {
     public double getSegundoNumero(){
         return this.segundoNumero;
     }
-    public double getResultado(){
-        return this.resultado;
-    }
+
+    
 
     //SETTERS
     public void setPrimeiroNumero(double primeiroNumero){
-        try {
-            System.out.println("Insira o primeiro numero: ");
-            //define o valor do primeiro numero
-            primeiroNumero = ler.nextDouble();
-            this.primeiroNumero = primeiroNumero;
-            System.out.println("Numero inserido: " + getPrimeiroNumero());
-
-        }catch (InputMismatchException e){
-            //verifica caso o usuario não tenha inserido um numero
-            System.out.println("Informe um numero! ");
-            setPrimeiroNumero(0);
+        boolean entrada = false;
+        while(!entrada) {
+            try {
+                System.out.println("Insira o primeiro numero: ");
+                //define o valor do primeiro numero
+                primeiroNumero = ler.nextDouble();
+                entrada = true;
+            } catch (InputMismatchException e) {
+                //verifica caso o usuario não tenha inserido um numero
+                System.out.println("Informe um numero! ");
+                ler.nextLine();
+            }
         }
+        this.primeiroNumero = primeiroNumero;
+        System.out.println("Numero inserido: " + getPrimeiroNumero());
     }
     public void setSegundoNumero(double segundoNumero){
-        try{
-            //define o valor do segundo numero
-            System.out.println("Insira o segundo numero: ");
-            segundoNumero = ler.nextDouble();
-            this.segundoNumero = segundoNumero;
-            System.out.println("Numero inserido: " + getSegundoNumero());
-
-        }catch (InputMismatchException e){
-            System.out.println("Insira um numero! ");
-            setSegundoNumero(0);
-        }
+         boolean entrada = false;
+         while(!entrada) {
+             try {
+                 //define o valor do segundo numero
+                 System.out.println("Insira o segundo numero: ");
+                 segundoNumero = ler.nextDouble();
+                 entrada = true;
+             } catch (InputMismatchException e) {
+                 System.out.println("Insira um numero! ");
+                 ler.nextLine();
+             }
+         }
+        this.segundoNumero = segundoNumero;
+        System.out.println("Numero inserido: " + getSegundoNumero());
     }
 
 
