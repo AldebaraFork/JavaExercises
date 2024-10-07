@@ -23,6 +23,7 @@ public abstract class Operacoes {
 
     //SETTERS
     public void setPrimeiroNumero(double primeiroNumero){
+        //evita com que os setters entrem em loop
         boolean entrada = false;
         while(!entrada) {
             try {
@@ -32,13 +33,14 @@ public abstract class Operacoes {
                 entrada = true;
             } catch (InputMismatchException e) {
                 //verifica caso o usuario não tenha inserido um numero
-                System.out.println("Informe um numero! ");
-                ler.nextLine();
+                System.out.println("Informe um numero! Tente novamenet");
             }
         }
         this.primeiroNumero = primeiroNumero;
         System.out.println("Numero inserido: " + getPrimeiroNumero());
     }
+
+
     public void setSegundoNumero(double segundoNumero){
          boolean entrada = false;
          while(!entrada) {
@@ -48,8 +50,7 @@ public abstract class Operacoes {
                  segundoNumero = ler.nextDouble();
                  entrada = true;
              } catch (InputMismatchException e) {
-                 System.out.println("Insira um numero! ");
-                 ler.nextLine();
+                 System.out.println("Insira um numero! Tente novamente");
              }
          }
         this.segundoNumero = segundoNumero;
