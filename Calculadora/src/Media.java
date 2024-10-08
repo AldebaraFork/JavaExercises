@@ -7,7 +7,7 @@ public class Media extends Operacoes{
 
     @Override
     public void calcular() {
-        resultado = getPrimeiroNumero() + getSegundoNumero() / 2;
+        resultado = (getPrimeiroNumero() + getSegundoNumero()) / 2;
         System.out.println("A media dos valores é: " + resultado);
 
     }
