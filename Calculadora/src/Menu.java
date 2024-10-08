@@ -13,6 +13,7 @@ public class Menu {
         System.out.println("5 - Ao quadrado");
         System.out.println("6 - Ao cubo");
         System.out.println("7 - Media");
+        System.out.println("8 - Juros simples");
         System.out.println("0 - Sair");
         short resposta = ler.nextShort();
         switch(resposta){
@@ -49,6 +50,11 @@ public class Menu {
             case 7:
                 Media media = new Media();
                 media.calcular();
+                retornarMenuPrincipal();
+                break;
+            case 8:
+                JurosSimples juros = new JurosSimples();
+                juros.calcular();
                 retornarMenuPrincipal();
                 break;
             case 0:

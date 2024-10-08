@@ -33,7 +33,7 @@ public abstract class Operacoes {
                 entrada = true;
             } catch (InputMismatchException e) {
                 //verifica caso o usuario não tenha inserido um numero
-                System.out.println("Informe um numero! Tente novamenet");
+                System.out.println("Informe um numero! Tente novamene");
             }
         }
         this.primeiroNumero = primeiroNumero;
