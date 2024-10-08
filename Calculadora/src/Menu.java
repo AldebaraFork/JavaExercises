@@ -10,6 +10,8 @@ public class Menu {
         System.out.println("2 - Subtrair");
         System.out.println("3 - Multiplicar");
         System.out.println("4 - Dividir");
+        System.out.println("5 - Ao quadrado");
+        System.out.println("6 - Ao cubo");
         System.out.println("0 - Sair");
         short resposta = ler.nextShort();
         switch(resposta){
@@ -31,6 +33,16 @@ public class Menu {
             case 4:
                 Divisao div = new Divisao();
                 div.calcular();
+                retornarMenuPrincipal();
+                break;
+            case 5:
+                Quadrado quadrado = new Quadrado();
+                quadrado.calcular();
+                retornarMenuPrincipal();
+                break;
+            case 6:
+                Cubo cubo = new Cubo();
+                cubo.calcular();
                 retornarMenuPrincipal();
                 break;
             case 0:
