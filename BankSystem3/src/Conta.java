@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.MissingFormatArgumentException;
 import java.util.Scanner;
 
@@ -38,9 +39,12 @@ public abstract class Conta {
             if (agencia <= 0) {
                 System.out.println("Agencia invalida! Tente novamente");
                 setAgencia(0);
+            }else {
+                this.agencia = agencia;
+                System.out.println("Agencia salvo com sucesso");
             }
-        }catch (MissingFormatArgumentException e){
-            System.out.println("Ocorreu o erro:  " + e.getMessage() + " Tente novamente");
+        }catch (InputMismatchException e){
+            System.out.println("Insira uma agencia valida! ");
             setAgencia(0);
         }
     }
