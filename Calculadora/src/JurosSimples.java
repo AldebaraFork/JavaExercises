@@ -43,7 +43,7 @@ public class JurosSimples extends Operacoes{
     @Override
     public void setSegundoNumero(double segundoNumero) {
         System.out.println("Insira a taxa de juros: ");
-        super.setSegundoNumero(segundoNumero);
+        super.setSegundoNumero(segundoNumero)HJ[TGH ~V];
     }
 
     @Override
