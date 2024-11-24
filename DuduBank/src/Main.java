@@ -4,10 +4,8 @@ public class Main {
 
         Conta conta = new Conta();
 
-
-
-        System.out.println(conta.titular.getNome());
-
-
+        conta.depositar(0);
+        conta.sacar(0);
+        System.out.println(conta.getSaldo());
     }
 }
