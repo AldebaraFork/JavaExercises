@@ -8,12 +8,13 @@ public class Conta {
     private int agencia;
     private int numero;
     private double saldo;
+    private boolean ativa = true;
 
     Scanner ler = new Scanner(System.in);
     Cliente cliente = new Cliente("", "", "", 0);
 
 
-    public Conta(){
+    public Conta() {
         this.titular = cliente;
     }
     //GETTERS
@@ -70,9 +71,8 @@ public class Conta {
         try {
             System.out.println("Insira o valor para deposito: ");
             valor = ler.nextDouble();
-            if (valor <= 0) {
-                System.out.println("Valor invalido! Tente novamente");
-                depositar(0);
+            if (valor < 0) {
+                throw new IllegalArgumentException("Valor inválido para depósito.");
             } else {
                 System.out.println("Valor depositado com sucesso! ");
                 this.saldo += valor;
@@ -94,9 +94,33 @@ public class Conta {
                 System.out.println("Saque de  R$:" + valor + " Autorizado! ");
                 this.saldo -= valor;
             }
-        }catch (InputMismatchException e) {
+        } catch (InputMismatchException e) {
             System.out.println("Insira um valor valido para saque! ");
             sacar(0);
+        }
+    }
+
+    public void transferir(double valor, Conta destino) {
+        System.out.println("Insira o valor para transferir: ");
+        try {
+            valor = ler.nextDouble();
+            if (valor <= 0) {
+                throw new IllegalArgumentException("O valor da transferência deve ser maior que zero.");
+            } else if (valor > this.saldo) {
+                throw new IllegalArgumentException("Saldo insuficiente para a transferência.");
+            }
+
+            if (!destino.ativa) {
+                throw new IllegalStateException("Conta destino inativa.");
+            }
+
+            saldo -= valor;
+            destino.depositar(valor);
+            System.out.println("Transferência de R$" + valor + " realizada com sucesso.");
+        } catch (InputMismatchException e) {
+            System.out.println("Valor inválido. Por favor, insira um número.");
+        } catch (IllegalArgumentException | IllegalStateException e) {
+            System.out.println(e.getMessage());
         }
     }
 }
