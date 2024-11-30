@@ -1,7 +1,7 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class Conta {
+public abstract class Conta {
 
     //PROPRIEDADES
     Cliente titular;
@@ -17,8 +17,13 @@ public class Conta {
     public Conta() {
         this.titular = cliente;
     }
+
+
     //GETTERS
 
+    public boolean getAtiva(){
+        return ativa;
+    }
     public int getAgencia() {
         return this.agencia;
     }
@@ -69,12 +74,11 @@ public class Conta {
 
     public void depositar(double valor) {
         try {
-            System.out.println("Insira o valor para deposito: ");
-            valor = ler.nextDouble();
+
             if (valor < 0) {
                 throw new IllegalArgumentException("Valor inválido para depósito.");
             } else {
-                System.out.println("Valor depositado com sucesso! ");
+                System.out.println("R$" + valor + " depositado com sucesso! ");
                 this.saldo += valor;
             }
         } catch (InputMismatchException e) {
@@ -101,8 +105,9 @@ public class Conta {
     }
 
     public void transferir(double valor, Conta destino) {
-        System.out.println("Insira o valor para transferir: ");
+
         try {
+            System.out.println("Insira o valor para transferencia");
             valor = ler.nextDouble();
             if (valor <= 0) {
                 throw new IllegalArgumentException("O valor da transferência deve ser maior que zero.");
