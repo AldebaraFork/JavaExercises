@@ -13,10 +13,7 @@ public class Cliente {
 
     //CONSTRUTOR
     public Cliente(String nome, String cpf, String email, int idade) {
-        setNome(nome);
-        setCpf(cpf);
-        setEmail(email);
-        setIdade(idade);
+
     }
 
     //GETTERS

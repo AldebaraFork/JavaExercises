@@ -11,11 +11,13 @@ public abstract class Conta {
     private boolean ativa = true;
 
     Scanner ler = new Scanner(System.in);
-    Cliente cliente = new Cliente("", "", "", 0);
+    Cliente cliente = new Cliente("eduardo", "41291732861", "edu@gmail.com", 20);
 
 
-    public Conta() {
+    public Conta(int numero, int agencia) {
         this.titular = cliente;
+        this.agencia = agencia;
+        this.numero = numero;
     }
 
 
@@ -34,6 +36,10 @@ public abstract class Conta {
 
     public double getSaldo() {
         return this.saldo;
+    }
+
+    public Cliente getTitular(){
+        return this.titular;
     }
 
     //SETTERS
