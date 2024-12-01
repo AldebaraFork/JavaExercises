@@ -11,7 +11,10 @@ public class Main {
         conta2.transferir(50, conta1);
 
 
-        System.out.println(conta1.getSaldo());
+
+
         System.out.println(conta2.getSaldo());
+        System.out.println(conta1.getSaldo());
+
     }
 }

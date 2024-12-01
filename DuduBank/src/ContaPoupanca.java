@@ -10,4 +10,9 @@ public class ContaPoupanca extends Conta{
         double novoValor = valor -0.80;
         super.transferir(novoValor, destino);
     }
+
+    @Override
+    public String toString() {
+        return "Conta Poupança do titular: " + getTitular() + " Cancelada com sucesso";
+    }
 }

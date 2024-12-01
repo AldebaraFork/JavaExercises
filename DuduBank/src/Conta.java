@@ -23,9 +23,6 @@ public abstract class Conta {
 
     //GETTERS
 
-    public boolean getAtiva(){
-        return ativa;
-    }
     public int getAgencia() {
         return this.agencia;
     }
@@ -132,5 +129,10 @@ public abstract class Conta {
         } catch (IllegalArgumentException | IllegalStateException e) {
             System.out.println(e.getMessage());
         }
+    }
+
+    public void fecharConta(Conta conta) {
+        conta.ativa = false;
+        System.out.println(conta.titular + " Cancelada!");
     }
 }
