@@ -84,7 +84,6 @@ public abstract class Conta {
             if (valor < 0) {
                 throw new IllegalArgumentException("Valor inválido para depósito.");
             } else {
-                System.out.println("R$" + valor + " depositado com sucesso! ");
                 this.saldo += valor;
             }
         } catch (InputMismatchException e) {
