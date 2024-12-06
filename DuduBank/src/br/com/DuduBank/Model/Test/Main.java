@@ -7,7 +7,8 @@ public class Main {
     public static void main(String[] args) {
 
 
-        ContaPoupanca conta = new ContaPoupanca(123, 593);
+        ContaCorrente conta = new ContaCorrente(123, 593, "eduardo@gmail.com");
+
 
         System.out.println(conta.toString());
 
