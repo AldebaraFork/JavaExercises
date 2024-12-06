@@ -1,3 +1,8 @@
+package br.com.DuduBank.Model.Model;
+
+
+import br.com.DuduBank.Model.Exception.SaldoInsuficiente;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -79,28 +84,28 @@ public abstract class Conta {
         try {
 
             if (valor < 0) {
-                throw new IllegalArgumentException("Valor inválido para depósito.");
+                throw new SaldoInsuficiente("Valor inválido para depósito.");
             } else {
                 this.saldo += valor;
             }
-        } catch (InputMismatchException e) {
+        } catch (InputMismatchException | SaldoInsuficiente e ) {
             System.out.println("Insira um valor valido para deposito! ");
             depositar(0);
         }
     }
 
-    public void sacar(double valor) {
+    public void sacar(double valor)  {
         try {
             System.out.println("Insira um valor para saque: ");
             valor = ler.nextDouble();
             if (valor > getSaldo()) {
-                System.out.println("Valor para saque invalido! Não há dinheiro suficiente");
-                sacar(0);
+                throw new SaldoInsuficiente("Saldo Insuficiente! Tente realizar um depósito antes.");
+
             } else {
                 System.out.println("Saque de  R$:" + valor + " Autorizado! ");
                 this.saldo -= valor;
             }
-        } catch (InputMismatchException e) {
+        } catch (InputMismatchException | SaldoInsuficiente e) {
             System.out.println("Insira um valor valido para saque! ");
             sacar(0);
         }
@@ -118,7 +123,7 @@ public abstract class Conta {
             }
 
             if (!destino.ativa) {
-                throw new IllegalStateException("Conta destino inativa.");
+                throw new IllegalStateException("br.com.DuduBank.br.com.DuduBank.Model.Model.Conta destino inativa.");
             }
 
             saldo -= valor;
@@ -131,8 +136,5 @@ public abstract class Conta {
         }
     }
 
-    public void fecharConta(Conta conta) {
-        conta.ativa = false;
-        System.out.println(conta.titular + " Cancelada!");
-    }
+
 }

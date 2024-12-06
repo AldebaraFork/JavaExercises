@@ -1,3 +1,5 @@
+package br.com.DuduBank.Model.Model;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 

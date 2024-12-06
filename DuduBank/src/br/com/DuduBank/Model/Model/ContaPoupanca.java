@@ -1,4 +1,6 @@
-public class ContaPoupanca extends Conta{
+package br.com.DuduBank.Model.Model;
+
+public class ContaPoupanca extends Conta {
 
     public ContaPoupanca(int numero, int agencia) {
         super(numero, agencia);
@@ -13,6 +15,8 @@ public class ContaPoupanca extends Conta{
 
     @Override
     public String toString() {
-        return "Conta Poupança do titular: " + getTitular() + " Cancelada com sucesso";
+        return "numero: " + getNumero()
+                + ", agencia: " + getAgencia()
+                + ", titular: " + getTitular();
     }
 }
